@@ -1,0 +1,3 @@
+Este error suede cuando no se han implementado la ruta de java en las variabels de entorno
+
+PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.

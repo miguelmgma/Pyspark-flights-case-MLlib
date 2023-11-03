@@ -1,0 +1,41 @@
+Análisis de vuelos (enero de 2008)
+
+
+Según un informe de 2010 hecho por la US Federal Aviation Administration, el precio de los retrasos en vuelos domésticos cuesta a los pasajeros hasta 32.9 miles de millones de dólares a los pasajeros, aerolíneas y a otros sectores de la economía. Más de la mitad de esta cantidad sale del bolsillo del pasajero, puesto que no solo pierden tiempo esperando a que salgan sus aviones, sino que al perder conexiones con otros vuelos, también se ven obligados a gastar dinero en comida y en habitaciones de hotel mientras se les re-ubica.
+
+El informe, centrado en datos del año 2007, estima que los retrasos en los vuelos domésticos causan un agujero de 4000 millones de dólares en el PIB cada año. El documento completo está disponible en
+<a href="http://www.isr.umd.edu/NEXTOR/pubs/TDI_Report_Final_10_18_10_V3.pdf">here</a>.
+
+Pero, ¿cuáles son las causas de los retrasos? Para responder a esta cuestión, vamos a analizar un dataset que contiene casi 2 millones de vuelos internos en EEUU durante el año 2008 (en realidad nos centraremos en el mes de enero, que contiene 100.000 vuelos) junto con los retrasos de cada uno y sus causas. Los datos han sido proporcionados por el Bureau of Transportation Statistics (BTS) del Departamento de transporte estadounidense (U.S. Department of Transportation, DOT).
+
+El dataset está compuesto por las siguientes variables:
+
+1. **Year** 2008
+2. **Month** 1
+3. **DayofMonth** 1-31
+4. **DayOfWeek** 1 (Monday) - 7 (Sunday)
+5. **DepTime** hora real de salida (local, hhmm)
+6. **CRSDepTime** hora prevista de salida (local, hhmm)
+7. **ArrTime** hora real de llegada (local, hhmm)
+8. **CRSArrTime** hora prevista de llegada (local, hhmm)
+9. **UniqueCarrier** código del aparato
+10. **FlightNum** número de vuelo
+11. **TailNum** identificador de cola: aircraft registration, unique aircraft identifier
+12. **ActualElapsedTime** tiempo real invertido en el vuelo
+13. **CRSElapsedTime** en minutos
+14. **AirTime** en minutos
+15. **ArrDelay** retraso a la llegada, en minutos: se considera que un vuelo ha llegado "on time" si aterrizó menos de 15 minutos más tarde de la hora prevista en el Computerized Reservations Systems (CRS).
+16. **DepDelay** retraso a la salida, en minutos
+17. **Origin** código IATA del aeropuerto de origen
+18. **Dest** código IATA del aeropuerto de destino
+19. **Distance** en millas
+20. **TaxiIn** taxi in time, in minutes
+21. **TaxiOut** taxi out time in minutes
+22. **Cancelled** *si el vuelo fue cancelado (1 = sí, 0 = no)
+23. **CancellationCode** razón de cancelación (A = aparato, B = tiempo atmosférico, C = NAS, D = seguridad)
+24. **Diverted** *si el vuelo ha sido desviado (1 = sí, 0 = no)
+25. **CarrierDelay** en minutos: El retraso del transportista está bajo el control del transportista aéreo. Ejemplos de sucesos que pueden determinar el retraso del transportista son: limpieza de la aeronave, daño de la aeronave, espera de la llegada de los pasajeros o la tripulación de conexión, equipaje, impacto de un pájaro, carga de equipaje, servicio de comidas, computadora, equipo del transportista, problemas legales de la tripulación (descanso del piloto o acompañante) , daños por mercancías peligrosas, inspección de ingeniería, abastecimiento de combustible, pasajeros discapacitados, tripulación retrasada, servicio de inodoros, mantenimiento, ventas excesivas, servicio de agua potable, denegación de viaje a pasajeros en mal estado, proceso de embarque muy lento, equipaje de mano no válido, retrasos de peso y equilibrio.
+26. **WeatherDelay** en minutos: causado por condiciones atmosféricas extremas o peligrosas, previstas o que se han manifestado antes del despegue, durante el viaje, o a la llegada.
+27. **NASDelay** en minutos: retraso causado por el National Airspace System (NAS) por motivos como condiciones meteorológicas (perjudiciales pero no extremas), operaciones del aeropuerto, mucho tráfico aéreo, problemas con los controladores aéreos, etc.
+28. **SecurityDelay** en minutos: causado por la evacuación de una terminal, re-embarque de un avión debido a brechas en la seguridad, fallos en dispositivos del control de seguridad, colas demasiado largas en el control de seguridad, etc.
+29. **LateAircraftDelay** en minutos: debido al propio retraso del avión al llegar, problemas para conseguir aterrizar en un aeropuerto a una hora más tardía de la que estaba prevista.
